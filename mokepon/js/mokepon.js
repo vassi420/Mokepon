@@ -140,34 +140,25 @@ function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById('resultado')
     let ataquesDelJugador = document.getElementById('ataques-del-jugador')
     let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
-
-    let notificacion = document.createElement('p')
+    // CREAMOS UN PARRAFO, ELEMENTO TIPO "P"
     let nuevoAtaqueDelJugador = document.createElement('p')
     let nuevoAtaqueDelEnemigo = document.createElement('p')
-
-    notificacion.innerHTML = resultado
+    //a este PARRAFO le estamos METIENDO un texto
+    sectionMensajes.innerHTML = resultado
     nuevoAtaqueDelJugador.innerHTML = ataqueJugador
     nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
-
-    // CREAMOS UN PARRAFO, ELEMENTO TIPO "P"
-    /* let parrafo = document.createElement('p') */
-    //a este PARRAFO le estamos METIENDO un texto
-    /* parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador +', la mascota del enemigo ataco con ' + ataqueEnemigo + ', ' + resultado */
-
     //METEMOS el parrafo que creamos anterior mente dentro de la seccion "mensajes"
-    sectionMensajes.appendChild(notificacion)
     ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
     ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 //esta funcion de mensaje final, crea la logica de ó perdimos ó ganamos
 function crearMensajeFinal(resultadoFinal) {
-    let sectionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
+    let sectionMensajes = document.getElementById('resultado')
 
-    parrafo.innerHTML = resultadoFinal
+    sectionMensajes.innerHTML = resultadoFinal
 
-    sectionMensajes.appendChild(parrafo)
+
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
