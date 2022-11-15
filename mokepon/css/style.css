@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #efefef;
+    
+}
+
+.titulo {
+    width: auto;
+    height: auto;
+    color: black;
+    text-align: center;
+    margin: 20px;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitulo {
+    margin: 20px;
+    font-size: 19px;
+}
+
+.tarjetas {
+    display: flex;
+    margin: 0 auto;
+}
+
+.card-mokepones {
+    width: 200px;
+    height: 200px;
+    background: azure;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid;
+    margin: 10px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-mokepones img {
+    width: 150px;
+    background-color: azure;
+}
+
+input {
+    display: none;
+}
+
+section#seleccionar-mascota button {
+    width: 200px;
+    height: 40px;
+    background-color: #44479B;
+    color: white;
+    border-radius: 5px;
+}
+
+/* SEGUNDA PANTALLA*/
+
+#seleccionar-ataque {
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque {
+    width: 150px;
+    height: 25px;
+    margin: 10px;
+    background-color: #44479B;
+    color: white;
+    border-radius: 10px;
+}
