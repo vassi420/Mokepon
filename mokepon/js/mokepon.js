@@ -137,15 +137,27 @@ function revisarVidas() {
 
 function crearMensaje(resultado) {
     //CREAMOS la seccion donde queremos introduccir nuestros mensajes (ID="MENSAJES")
-    let sectionMensajes = document.getElementById('mensajes')
+    let sectionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
+
+    let notificacion = document.createElement('p')
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    notificacion.innerHTML = resultado
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
 
     // CREAMOS UN PARRAFO, ELEMENTO TIPO "P"
-    let parrafo = document.createElement('p')
+    /* let parrafo = document.createElement('p') */
     //a este PARRAFO le estamos METIENDO un texto
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador +', la mascota del enemigo ataco con ' + ataqueEnemigo + ', ' + resultado
+    /* parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador +', la mascota del enemigo ataco con ' + ataqueEnemigo + ', ' + resultado */
 
     //METEMOS el parrafo que creamos anterior mente dentro de la seccion "mensajes"
-    sectionMensajes.appendChild(parrafo)
+    sectionMensajes.appendChild(notificacion)
+    ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
 }
 
 //esta funcion de mensaje final, crea la logica de ó perdimos ó ganamos
