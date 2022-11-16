@@ -119,7 +119,7 @@ section#seleccionar-mascota button {
 
 .ataques-jugador, .ataques-enemigo {
     padding: 5px;
-    height: 150px;
+    height: auto;
     display: flex;
     gap: 10px;
     flex-direction: column;
