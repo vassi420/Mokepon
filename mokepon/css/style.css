@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-* {
+body {
     margin: 0;
     padding: 0;
     font-family: 'Press Start 2P', cursive;
     background-color: #efefef;
     
 }
-
+/* PRIMERA PANTALLA */
 .titulo {
     width: auto;
     height: auto;
@@ -45,11 +45,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 5px;
 }
 
 .card-mokepones img {
     width: 150px;
-    background-color: azure;
 }
 
 input {
@@ -58,6 +58,9 @@ input {
 
 input:checked + label {
     background: black;
+    color: white;
+    border: 3px solid #44479B;
+    border-radius: 5px;
 }
 
 section#seleccionar-mascota button {
@@ -109,15 +112,19 @@ section#seleccionar-mascota button {
 .ataques {
     margin: 10px;
     padding: 10px;
-    border: 1px solid black;
     display: grid;
-    grid-template-columns: 100px 100px;
+    grid-template-columns: 150px 150px;
+    grid-column-gap: 10px;
 }
 
 .ataques-jugador, .ataques-enemigo {
+    padding: 5px;
+    height: 150px;
     display: flex;
+    gap: 10px;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
 }
 
 @media (max-width: 360px) {
