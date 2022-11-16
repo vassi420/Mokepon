@@ -33,6 +33,8 @@ let inputHipodoge
 let inputCapipepo
 let inputRatigueya
 
+let mascotaJugador
+
 class mokepon {
     constructor(nombre, img, vida) {
         this.nombre = nombre
@@ -113,20 +115,34 @@ function seleccionarMascotaJugador() {
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id
+        mascotaJugador = inputHipodoge.id
     } else if (inputCapipepo.checked) {
         spanMascotaJugador.innerHTML = inputCapipepo.id
+        mascotaJugador = inputCapipepo.id
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
     } else {
         alert("Selecciona un MOKEPON!")
     }
 
+    extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
 }
 function seleccionarMascotaEnemigo() {
     let mascotaAleatorio = aleatorio(0, mokepones.length - 1)
 
     spanMascotaEnemigo.innerHTML =  mokepones[mascotaAleatorio].nombre
+}
+
+function extraerAtaques(mascotaJugador) {
+    let ataques
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador === mokepones[i].nombre) {
+            ataques = mokepones[i].ataques
+        }
+    }
+    console.log(ataques)
 }
 
 ////////////////////////////
