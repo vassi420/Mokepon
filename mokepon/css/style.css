@@ -127,6 +127,17 @@ section#seleccionar-mascota button {
     border: 1px solid black;
 }
 
+/* CANVAS */
+
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#mapa {
+    border: 2px solid white;
+}
+
 @media (max-width: 360px) {
     .tarjetas, .tarjetas-ataque {
         flex-direction: column;

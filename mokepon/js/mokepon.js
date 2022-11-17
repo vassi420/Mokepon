@@ -18,6 +18,10 @@ const ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 const contenedorTarjetas = document.getElementById('contenedor-tarjetas')
 
 const contenedorAtaques = document.getElementById('contenedor-ataques')
+
+const sectionVerMapa = document.getElementById('ver-mapa')
+const mapa = document.getElementById('mapa')
+
 ////////////////////////////
 //    Variables globales
 ////////////////////////////
@@ -48,12 +52,20 @@ let ataqueAlJugador = []
 let indexAtaqueJugador
 let indexAtaqueEnemigo
 
+let lienzo = mapa.getContext("2d")
+
 class mokepon {
     constructor(nombre, img, vida) {
         this.nombre = nombre
         this.img = img
         this.vida = vida
         this.ataques = []
+        this.x = 20
+        this.y = 30
+        this.ancho = 80
+        this.alto = 80
+        this.mapaFoto = new Image()
+        this.mapaFoto.src = img
     }     
 }
 
@@ -115,6 +127,7 @@ mokepones.push(hipodoge, capipepo, ratigueya, tucapalma, pydos, langostelvis)
 function iniciarJuego() {
     
     sectionSeleccionarAtaque.style.display = 'none'
+    sectionVerMapa.style.display = 'none'
 
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
@@ -136,7 +149,6 @@ function iniciarJuego() {
     })
 
     sectionReiniciar.style.display = 'none'
-
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     //por cada una de las variables/botones ("botonFuego") creamos un escuchador de eventos, creando una nueva funcion (ataqueFuego) cuando le demos click al boton de fuego
@@ -148,7 +160,9 @@ function iniciarJuego() {
 ////////////////////////////
 function seleccionarMascotaJugador() {
     sectionSeleccionarMascota.style.display = 'none'
-    sectionSeleccionarAtaque.style.display = 'flex'
+    
+    /* sectionSeleccionarAtaque.style.display = 'flex' */
+    sectionVerMapa.style.display = 'flex'
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -235,22 +249,6 @@ function secuenciaAtaque() {
 ////////////////////////////
 //    Funciones para los ataques
 ////////////////////////////
-/* function ataqueFuego() {
-    ataqueJugador = 'FUEGO'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueAgua() {
-    ataqueJugador = 'AGUA'
-    ataqueAleatorioEnemigo()
-}
-
-function ataqueTierra() {
-    ataqueJugador = 'TIERRA'
-    ataqueAleatorioEnemigo()
-
-} */
-
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(0, ataquesMokeponEnemigo.length - 1)
 
@@ -343,6 +341,23 @@ function reiniciarJuego(){
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+function pintarPersonaje(){
+    lienzo.clearRect(0, 0, mapa.width, mapa.height)
+    lienzo.drawImage(
+        capipepo.mapaFoto,
+        capipepo.x,
+        capipepo.y,
+        capipepo.ancho,
+        capipepo.alto,
+    )
+}
+
+function moverCapipepo() {
+    capipepo.x = capipepo.x + 5
+    pintarPersonaje()
+}
+
 
 // NOTA: esta es otra manera de llamar al script despues de que se cargue todo el HTML. 
 // La funcion iniciarJuego se carga cuando ya todo el contenido esta cargado.
