@@ -134,12 +134,26 @@ section#seleccionar-mascota button {
     align-items: center;
     justify-content: center;
 }
-#mapa {
-    border: 2px solid white;
+
+#ver-mapa button {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid #000;
+    color: black;
+    margin-top: 5px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 560px) {
     .tarjetas, .tarjetas-ataque {
+        flex-direction: column;
+    }
+}
+@media (max-width: 360px) {
+    #ver-mapa div {
+        display: flex;
+        align-items: center;
         flex-direction: column;
     }
 }
